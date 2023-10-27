@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Big O Notation</title>
+</head>
+<body>
+    <h1>Big O Notation Practice</h1>
+    <div id="step-one">
+        <h2>Step One: Simplifying Expressions</h2>
+        <ol>
+            <li>O(n + 10) > O(n)</li>
+            <li>O(100 * n)> O(n)</li>
+            <li>O(25)> O(1)></li>
+            <li>O(n^2 + n^3)> O(n^3)</li>
+            <li>O(n + n + n + n)> O(n)</li>
+            <li>O(1000 * log(n) + n)> O(n)</li>
+            <li>O(1000 * n * log(n) + n)> O(n log n)</li>
+            <li> O(2^n + n^2)> O(2^n)</li>
+            <li>O(5 + 3 + 1)> O(1)</li>
+            <li>O(n + n^(1/2) + n^2 + n * log(n)^10)> O(n^2)</li>
+        </ol>
+    </div>
+    <div id="step-2">
+        <h2>Step Two: Calculating Time Complexity</h2>
+            <div class="functions">
+                function logUpTo(n) {
+                    for (let i = 1; i <= n; i++) {
+                    console.log(i);
+                    }
+                }
+            </div>
+            <div class="answer">
+                Time Complexity: O(n)
+            </div>
+
+            <div class="functions">
+                function logAtLeast10(n) {
+                    for (let i = 1; i <= Math.max(n, 10); i++) {
+                      console.log(i);
+                    }
+                  }
+            </div>
+            <div class="answer">
+                Time Complexity: O(n)
+            </div>
+
+            <div class="functions">
+                function logAtMost10(n) {
+                    for (let i = 1; i <= Math.min(n, 10); i++) {
+                      console.log(i);
+                    }
+                  }
+            </div>
+            <div class="answer">
+                Time Complexity: O(n)
+            </div>
+            
+            <div class="functions">
+                function onlyElementsAtEvenIndex(array) {
+                    let newArray = [];
+                    for (let i = 0; i < array.length; i++) {
+                      if (i % 2 === 0) {
+                        newArray.push(array[i]);
+                      }
+                    }
+                    return newArray;
+                  }
+            </div>
+            <div class="answer">
+                Time Complexity: O(n)
+            </div>
+            
+            <div class="functions">
+                function subtotals(array) {
+                    let subtotalArray = [];
+                    for (let i = 0; i < array.length; i++) {
+                      let subtotal = 0;
+                      for (let j = 0; j <= i; j++) {
+                        subtotal += array[j];
+                      }
+                      subtotalArray.push(subtotal);
+                    }
+                    return subtotalArray;
+                  }
+            </div>
+            <div class="answer">
+                Time Complexity: O(n^2)
+            </div>
+            
+            <div class="functions">
+                function vowelCount(str) {
+                    let vowelCount = {};
+                    const vowels = "aeiouAEIOU";
+                  
+                    for (let char of str) {
+                      if(vowels.includes(char)) {
+                        if(char in vowelCount) {
+                          vowelCount[char] += 1;
+                        } else {
+                          vowelCount[char] = 1;
+                        }
+                      }
+                    }
+                  
+                    return vowelCount;
+                  }
+            </div>
+            <div class="answer">
+                Time Complexity: O(n)
+            </div>
+            
+    </div>
+
+    <div id="step-3">
+        <h2>Part 3: Short Answer</h2>
+        <ol>
+            <li>True or false: n^2 + n is O(n^2).</li>
+            <p>True</p>
+            <li>True or false: n^2 * n is O(n^3).</li>
+            <p>true</p>
+            <li>True or false: n^2 + n is O(n).</li>
+            <p>false</p>
+            <li>What’s the time complexity of the .indexOf array method?</li>
+            <p>O(n)</p>
+            <li>What’s the time complexity of the .includes array method?</li>
+            <p>O(n)</p>
+            <li>What’s the time complexity of the .forEach array method?</li>
+            <p>O(n)</p>
+            <li>What’s the time complexity of the .sort array method?</li>
+            <p>O(n log n)</p>
+            <li>What’s the time complexity of the .unshift array method?</li>
+            <p>O(n)</p>
+            <li>What’s the time complexity of the .push array method?</li>
+            <p>O(1)</p>
+            <li>What’s the time complexity of the .splice array method?</li>
+            <p>O(n)</p>
+            <li>What’s the time complexity of the .pop array method?</li>
+            <p>O(1)</p>
+            <li>What’s the time complexity of the Object.keys() function?</li>
+            <p>O(n)</p>
+            <h3>Bonus</h3>
+            <li>What’s the space complexity of the Object.keys() function?</li>
+            <p>O(n)</p>
+            
+        </ol>
+    </div>
+</body>
+</html>
